@@ -27,6 +27,17 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Mamma';
+    src: url('../assets/fonts/Mammagamma.ttf');
+}
+
+@font-face {
+    font-family: 'Taco';
+    src: url('../assets/fonts/TacoBell2.ttf');
+
+}
+
 /**
  * App-wide Styles
  */
