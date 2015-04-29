@@ -5,8 +5,10 @@ var mongoose = require('mongoose'),
     postComment = require('./post.comment.model');
 
 var PostSchema = new Schema({
+    title: String,
+    description: {type: String, maxLength: 160},
     authorId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}, //Reference to the user ID only.
-    authorName: String, //Name of the user who posted it. 
+    authorName: String, //Name of the user who posted it.
     date: {type: Date, default: Date.now}, //gets the current date.
     isHelper: Boolean, //Determines if the user is needing help or wants to help. Set true if the user wants to help, false if the user needs help
     isOpen: Boolean, //Is the post closed

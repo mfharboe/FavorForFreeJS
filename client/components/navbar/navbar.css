@@ -1,3 +1,17 @@
 .navbar {
     background-color: #006064;
 }
+
+.navbar-default {
+    border-color: #FFFFFF;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus
+{
+  color: #67b168;
+}
