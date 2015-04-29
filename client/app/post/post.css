@@ -1,0 +1,26 @@
+.box {
+  border-radius: 3px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.8);
+  padding: 10px 25px;
+  text-align: center;
+  margin-top: 60px;
+  background-color: #E0F7FA;
+}
+
+.box:hover {
+  background-color: #00BCD4;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+
+.box-icon {
+  background-color: #006064;
+  border-radius: 50%;
+  border: 2px solid #E0F7FA;
+  height: 100px;
+  margin: 0 auto;
+  width: 100px;
+  margin-top: -61px;
+  text-align: center;
+}
+
