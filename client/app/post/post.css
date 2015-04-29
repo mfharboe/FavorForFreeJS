@@ -1,4 +1,4 @@
-.box {
+.box_posts {
   border-radius: 3px;
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.8);
   padding: 10px 25px;
@@ -7,10 +7,27 @@
   background-color: #E0F7FA;
 }
 
-.box:hover {
+.box_posts:hover {
   background-color: #00BCD4;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 1);
   cursor: pointer;
+}
+
+.box_post {
+  border-radius: 3px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.8);
+  padding: 10px 25px;
+  text-align: center;
+  margin-top: 60px;
+  background-color: #E0F7FA;
+}
+
+.box_comment {
+  border-radius: 3px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.8);
+  padding: 10px 25px;
+  margin-top: 60px;
+  background-color: #E0F7FA;
 }
 
 .box-icon {

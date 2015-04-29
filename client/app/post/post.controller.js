@@ -1,12 +1,15 @@
 'use strict';
 
 angular.module('favorForFreeApp')
-  .controller('PostCtrl', function ($scope, postService) {
-    $scope.message = 'Hello';
-
-    $scope.posts = [];
+    .controller('PostCtrl', function ($scope, postService, $state) {
     
-    postService.list(function(posts){
-        $scope.posts = posts;
+        $scope.posts = [];
+
+        postService.list(function (posts) {
+            $scope.posts = posts;
+        });
+
+        $scope.details = function (_id) {
+            $state.go('comment', {id: _id})
+        };
     });
-  });
