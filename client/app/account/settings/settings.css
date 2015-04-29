@@ -1,0 +1,12 @@
+.settings_box {
+    border-radius: 3px;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.8);
+    padding: 10px 25px;
+    background-color: #E0F7FA;
+}
+
+#tab_hover:hover:not([enabled="enabled"]){
+    background-color: #00BCD4;
+  
+    cursor: pointer;
+}
