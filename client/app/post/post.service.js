@@ -1,7 +1,7 @@
 'use strict' 
 
 angular.module('favorForFreeApp')
-.factory('postsService',function($http){
+.factory('postService',function($http){
 			var service = {};
 			service.list = function(callback){
 				$http.get('/api/posts').success(callback);
