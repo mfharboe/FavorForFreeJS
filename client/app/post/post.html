@@ -6,19 +6,36 @@
             <div class="box-icon">
                 <img src="../assets/images/needhelp_icon.png">
             </div>
-           
+           <!--      <form ng-submit="addPost()"
+        style="margin-top:30px;">
+        <h3>Add a new post</h3>
+
+        <div class="form-group">
+          <input type="text"
+            class="form-control"
+            placeholder="Title"
+            ng-model="title"></input>
+        </div>
+        <div class="form-group">
+          <input type="text"
+          class="form-control"
+          placeholder="Link"
+          ng-model="link"></input>
+        </div>
+        <button type="submit" class="btn btn-primary">Post</button>
+      </form>-->
             <h4>Need a Favor?</h4>
-            <form role="form" ng-model="newPost">
+            <form ng-submit="addPost()">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Title.."></input>
+                    <input type="text" class="form-control" placeholder="Title.." ng-model="title"></input>
                 </div>
                 <div class="form-group">
-                    <textarea type="text" class="form-control" placeholder="Description.." rows="3"></textarea>
+                    <textarea type="text" class="form-control" placeholder="Description.." ng-model="description" rows="3"></textarea>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Zip.."></input>
+                    <input type="text" class="form-control" placeholder="Zip.." ng-model="zip"></input>
                 </div>
-                <button type="submit" class="btn btn-primary" ng-click="addPost()">Submit</button>
+                <button type="submit" class="btn btn-primary" >Post</button>
             </form>
         </div>
 
