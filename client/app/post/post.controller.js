@@ -26,6 +26,7 @@ angular.module('favorForFreeApp')
             if (!$scope.title || $scope.title === '') {
                 return;
             }
+            
             console.log('addPost --------!!!!!!!!!!!!');
             postService.create({
                 title: $scope.title,
@@ -34,7 +35,6 @@ angular.module('favorForFreeApp')
             }, function (posts) {
                 $scope.posts = posts;
             });
-
             $scope.title = '';
         };
     });
