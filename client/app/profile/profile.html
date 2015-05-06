@@ -8,32 +8,64 @@
       <hr>
       <div class="form-horizontal" role="form">
         <div class="form-group">
-          <div style="font-size:18px" class="col-md-6 settings_box">
-            <div>
-              <label>Name: </label>
-              {{profile.name}}
+          <div class="col-md-6">
+            <div class="panel panel-primary row">
+              <div class="panel-heading">
+                <h3 class="panel-title">{{profile.name}}</h3>
+              </div>
+              <div class="panel-body">
+                <div style="font-size:18px">
+                  <div>
+                    <label>Rating: </label>
+                    {{profile.rating}}</div>
+
+                  <div>
+                    <label>Email: </label>
+                    {{profile.email}}
+                  </div>
+                  <div>
+                    <label>firstname: </label>
+                    {{profile.firstname}}
+                  </div>
+                  <div>
+                    <label>lastname: </label>
+                    {{profile.lastname}}
+                  </div>
+                  <div>
+                    <label>Sex: </label>
+                    {{sex}}
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div>
-              <label>Rating: </label>
-              {{profile.rating}}</div>
-
-            <div>
-              <label>Email: </label>
-              {{profile.email}}
+            <div class="panel panel-primary row">
+              <div class="panel-heading">
+                <h3 class="panel-title">About me</h3>
+              </div>
+              <div class="panel-body">
+                {{profile.description}}
+              </div>
             </div>
-            <div>
-              <label>firstname: </label>
-              {{profile.firstname}}
+            <!--
+            <div class="row">
+              <hr>
+              <h3>About me</h3>
+              <div style="font-size:18px" class="panel panel-primary">
+                <div class="row">{{profile.description}}</div>
+              </div>
             </div>
-            <div>
-              <label>lastname: </label>
-              {{profile.lastname}}
-            </div>
-
+-->
           </div>
           <div class="col-md-6">
-            <img class="col-md-12  settings_box" src="{{profile.image}}">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">My Picture</h3>
+              </div>
+              <div class="panel-body">
+                <img class="col-md-12" src="{{profile.image}}">
+              </div>
+            </div>
           </div>
         </div>
       </div>
