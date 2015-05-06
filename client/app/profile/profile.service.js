@@ -6,9 +6,8 @@ angular.module('favorForFreeApp')
 
 
     service.find = function (_id, callback) {
-      console.log("getting id " + _id);
       $http.get('/api/users/' + _id).success(callback);
-      console.log(callback);
+
     };
 
     service.update = function (profile, callback) {

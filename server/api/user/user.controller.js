@@ -50,19 +50,22 @@ exports.create = function (req, res, next) {
   var newUser = new User(req.body);
   newUser.provider = 'local';
   newUser.role = 'user';
-  newUser.firstname = 'nil';
-  newUser.lastname = 'nil';
-  newUser.save(function (err, user) {
-    if (err) return validationError(res, err);
-    var token = jwt.sign({
-      _id: user._id
-    }, config.secrets.session, {
-      expiresInMinutes: 60 * 5
+  newUser.firstname = '';
+  newUser.lastname = '';
+  newUser.description = '';
+  newUser.sex = 1;
+  newUser.image = '',
+    newUser.save(function (err, user) {
+      if (err) return validationError(res, err);
+      var token = jwt.sign({
+        _id: user._id
+      }, config.secrets.session, {
+        expiresInMinutes: 60 * 5
+      });
+      res.json({
+        token: token
+      });
     });
-    res.json({
-      token: token
-    });
-  });
 };
 
 /**

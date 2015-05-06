@@ -8,6 +8,9 @@ var UserSchema = new Schema({
   name: String,
   firstname: String,
   lastname: String,
+  sex: Number,
+  description: String,
+  image: String,
   rating: {
     type: Number,
     default: 0
@@ -49,7 +52,10 @@ UserSchema
       'role': this.role,
       'email': this.email,
       'firstname': this.firstname,
-      'lastname': this.lastname
+      'lastname': this.lastname,
+      'sex': this.sex,
+      'description': this.description,
+      'image': this.image
     };
   });
 

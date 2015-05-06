@@ -3,32 +3,37 @@
 
   <div class="row">
     <!-- CONTAINER -->
-    <div class="container settings_box">
-      <h3>Personal info</h3>
+    <div class="container ">
+      <h3>My Personal info</h3>
       <hr>
       <div class="form-horizontal" role="form">
         <div class="form-group">
-          <div>
-            <label>Name: </label>
-            {{profile.name}}
-          </div>
+          <div style="font-size:18px" class="col-md-6 settings_box">
+            <div>
+              <label>Name: </label>
+              {{profile.name}}
+            </div>
 
-          <div>
-            <label>Rating: </label>
-            {{profile.rating}}
-          </div>
+            <div>
+              <label>Rating: </label>
+              {{profile.rating}}</div>
 
-          <div>
-            <label>Email: </label>
-            {{profile.email}}
+            <div>
+              <label>Email: </label>
+              {{profile.email}}
+            </div>
+            <div>
+              <label>firstname: </label>
+              {{profile.firstname}}
+            </div>
+            <div>
+              <label>lastname: </label>
+              {{profile.lastname}}
+            </div>
+
           </div>
-          <div>
-            <label>firstname: </label>
-            {{profile.firstname}}
-          </div>
-          <div>
-            <label>lastname: </label>
-            {{profile.lastname}}
+          <div class="col-md-6">
+            <img class="col-md-12  settings_box" src="{{profile.image}}">
           </div>
         </div>
       </div>

@@ -1,17 +1,27 @@
 'use strict';
 
 angular.module('favorForFreeApp')
-  .controller('SettingsCtrl', function ($scope, User, Auth, profileService, $stateParams, $location, $state) {
+  .controller('SettingsCtrl', function ($scope, User, Auth, profileService, $stateParams, $location, $state, $http) {
     $scope.errors = {};
     $scope.profile = Auth.getCurrentUser();
+    $scope.options = [{
+      name: "male",
+      id: 0
+    }, {
+      name: "female",
+      id: 1
+    }];
 
 
+    $scope.selectedOption = $scope.options[$scope.profile.sex];
 
     $scope.update = function () {
+      $scope.profile.sex = $scope.selectedOption.id;
       profileService.update($scope.profile, function (profile) {
         $state.go('main');
       });
     };
+
 
     $scope.changePassword = function (form) {
       $scope.submitted = true;
