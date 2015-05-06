@@ -8,5 +8,5 @@ module.exports = {
     uri: 'mongodb://localhost/favorforfree-dev'
   },
 
-  seedDB: true
+  seedDB: false
 };

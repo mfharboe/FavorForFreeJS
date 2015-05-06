@@ -3,104 +3,112 @@
 <!-- Button trigger modal -->
 <div class="container">
 
-    <div class="row">
-        <!-- CONTAINER -->
-        <div class="container settings_box">
-            <!--TABS-->
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active">
-                    <a id="tab_hover" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Personal Information</a>
-                </li>
-                <li role="presentation">
-                    <a id="tab_hover" href="#password" aria-controls="password" role="tab" data-toggle="tab" active="tab.active" disabled="tab.disabled">Password</a>
-                </li>
-            </ul>
+  <div class="row">
+    <!-- CONTAINER -->
+    <div class="container settings_box">
+      <!--TABS-->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+          <a id="tab_hover" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Personal Information</a>
+        </li>
+        <li role="presentation">
+          <a id="tab_hover" href="#password" aria-controls="password" role="tab" data-toggle="tab" active="tab.active" disabled="tab.disabled">Password</a>
+        </li>
+      </ul>
 
-            <div class="tab-content">
-                <!--PERSONAL INFORMATION TAB-->
-                <div role="tabpanel" class="tab-pane fade in active" id="profile">
+      <div class="tab-content">
+        <!--PERSONAL INFORMATION TAB-->
+        <div role="tabpanel" class="tab-pane fade in active" id="profile">
 
-                    <h3>Personal info</h3>
-                    <form class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">First name:</label>
-                            <div class="col-lg-8">
-                                <input class="form-control" type="text" value="Jane">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Last name:</label>
-                            <div class="col-lg-8">
-                                <input class="form-control" type="text" value="Bishop">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Skills: </label>
-                            <div class="col-lg-8">
-                                <input class="form-control" type="text" value="Strong, mechanic">
-                            </div>
-                        </div>
 
-                        <!--  <div class="form-group">
+          <h3>Personal info</h3>
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Username: </label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" ng-model="profile.name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Email: </label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" ng-model="profile.email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">First name:</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" ng-model="profile.firstname">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Last name:</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" ng-model="profile.lastname">
+              </div>
+            </div>
+
+
+            <!--  <div class="form-group">
                             <label class="col-lg-3 control-label">Email:</label>
                             <div class="col-lg-8">
                                 <input class="form-control" type="text" value="janesemail@gmail.com">
                             </div>
                         </div>-->
 
-                        <!--  <div class="form-group">
+            <!--  <div class="form-group">
                             <label class="col-md-3 control-label">Username:</label>
                             <div class="col-md-8">
                                 <input class="form-control" type="text" value="janeuser">
                             </div>
                         </div>-->
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Rating: </label>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label"></label>
-                            <div class="col-md-8">
-                                <input type="button" class="btn btn-primary" value="Save Changes">
-                                <span></span>
-                                <input type="reset" class="btn btn-default" value="Reset">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-                <!--PASSWORD TAB-->
-                <div role="tabpanel" class="tab-pane fade" id="password">
-                    <h3>Password</h3>
-                    <form class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Old Password:</label>
-                            <div class="col-md-8">
-                                <input class="form-control" type="password">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">New Password:</label>
-                            <div class="col-md-8">
-                                <input class="form-control" type="password">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Confirm new password:</label>
-                            <div class="col-md-8">
-                                <input class="form-control" type="password">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label"></label>
-                            <div class="col-md-8">
-                                <input type="button" class="btn btn-primary" value="Save Changes">
-                                <span></span>
-                                <input type="reset" class="btn btn-default" value="Reset">
-                            </div>
-                        </div>
-                    </form>
-                </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Rating: </label>
             </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label"></label>
+              <div class="col-md-8">
+                <input type="button" class="btn btn-primary" ng-click="update()" value="Save Changes">
+                <span></span>
+                <input type="reset" class="btn btn-default" value="Reset">
+              </div>
+            </div>
+          </form>
         </div>
+
+        <!--PASSWORD TAB-->
+        <div role="tabpanel" class="tab-pane fade" id="password">
+          <h3>Password</h3>
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label class="col-md-3 control-label">Old Password:</label>
+              <div class="col-md-8">
+                <input class="form-control" type="password">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">New Password:</label>
+              <div class="col-md-8">
+                <input class="form-control" type="password">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">Confirm new password:</label>
+              <div class="col-md-8">
+                <input class="form-control" type="password">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label"></label>
+              <div class="col-md-8">
+                <input type="button" class="btn btn-primary" value="Save Changes">
+                <span></span>
+                <input type="reset" class="btn btn-default" value="Reset">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
