@@ -8,17 +8,17 @@
             </div>
            
             <h4>Give a Favor?</h4>
-            <form role="form" ng-model="newPost">
+            <form role="form" ng-submit="addPost(false)">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Title.."></input>
+                    <input type="text" class="form-control" placeholder="Title.." ng-model="title"></input>
                 </div>
                 <div class="form-group">
-                    <textarea type="text" class="form-control" placeholder="Description.." rows="3"></textarea>
+                    <textarea type="text" class="form-control" placeholder="Description.." rows="3" ng-model="description"></textarea>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Zip.."></input>
+                    <input type="text" class="form-control" placeholder="Zip.." ng-model="zip"></input>
                 </div>
-                <button type="submit" class="btn btn-primary" ng-click="addPost()">Submit</button>
+                <button type="submit" class="btn btn-primary">Give Favor</button>
             </form>
         </div>
 
@@ -42,7 +42,7 @@
                                 <li><span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
                                 </li>
                                 <li>|</li>
-                                <li><span><i class="glyphicon glyphicon-road"></i> 34,2 km</span>
+                                <li><span><i class="glyphicon glyphicon-road"></i> {{post.zip}}</span>
                                 </li>
                             </ul>
                         </div>

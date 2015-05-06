@@ -9,34 +9,32 @@ angular.module('favorForFreeApp')
       $scope.posts = posts;
     });
 
-    $scope.details = function (_id) {
-      $state.go('comment', {
-        id: _id
-      })
-    };
-
-    /**
-    todo list/ mangler til addPost:
-    authorId
-    authorName
-    isHelper
-    isOpen
-    */
-    $scope.addPost = function () {
-      if (!$scope.title || $scope.title === '') {
-        return;
-      }
-      console.log('addPost --------!!!!!!!!!!!!');
-      postService.create({
-        title: $scope.title,
-        description: $scope.description,
-        zip: $scope.zip
-      }, function (posts) {
-        $scope.posts = posts;
-      });
-
-      $scope.title = '';
-      $scope.description = '';
-      $scope.zip = '';
-    };
-  });
+        $scope.details = function (_id) {
+            $state.go('comment', {
+                id: _id
+            })
+        };
+    
+        $scope.addPost = function (isHelper) {
+            if (!$scope.title || $scope.title === '') {
+                return;
+            }
+            if (!$scope.description || $scope.description === '') {
+                return;
+            }
+            if (!$scope.zip || $scope.zip === '') {
+                return;
+            }
+            postService.create({
+                title: $scope.title,
+                description: $scope.description,
+                zip: $scope.zip,
+                isHelper: isHelper
+            }, function (posts) {
+                $scope.posts = posts;
+            });
+            $scope.title = '';
+            $scope.description = '';
+            $scope.zip = '';
+        };
+    });
