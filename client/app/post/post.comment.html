@@ -16,8 +16,9 @@
       </div>
       <br>
       <ul class="list-inline">
-        <li><span><i class="glyphicon glyphicon-user"></i> {{post.authorName}}</span>
-        </li>
+        <!-- Onclick method to redirect to the correct profile, using the available author id instead of getting userId from user object -->
+        <a ng-click="userDetails(post.authorId)"><span><i class="glyphicon glyphicon-user"></i>{{post.authorName}}</span>
+        </a>
         <li>|</li>
         <li><span><i class="glyphicon glyphicon-calendar"></i> {{post.date}}</span>
         </li>
