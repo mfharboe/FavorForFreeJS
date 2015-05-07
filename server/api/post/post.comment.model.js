@@ -1,7 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
+  Schema = mongoose.Schema;
 
 /**
 The comments require an author ID and name; the name is for showing and the ID is for easy referencing. 
