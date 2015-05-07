@@ -10,7 +10,7 @@ var PostCommentSchema = new Schema({
     authorId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}, //Reference to the user ID only.
     authorName: String, //Name of the user who posted it. 
     date: {type: Date, default: Date.now}, //gets the current date
-    body: String //The body of the comment
+    comment: String //The body of the comment
 });
 
 module.exports = mongoose.model('PostComment', PostCommentSchema);

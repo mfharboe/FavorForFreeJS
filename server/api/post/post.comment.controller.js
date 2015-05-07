@@ -13,10 +13,12 @@ exports.create = function (req, res) {
     Post.findById(req.params.id, function (err, post) { //Params have id (specified by the post's "Index.js" file)
         if (err) return handleError(err, res, 500); //Returns an error with the error code 500 (internal server error)
         if (!post) return handleError(err, res, 404); //Returns an error if the post is not found (wrong id)
-        var comment = req.body; //Saves the body (JSON) from the request
-        //        comments.authorId = req.user._id; 
-        //        comments.authorName = req.user.name;
-        post.comments.push(comment); //Adds the comment to the array of comments in the parent (post) class. 
+        
+        var newComment = req.body; //Saves the body (JSON) from the request
+        newComment.authorId = req.user._id; 
+        newComment.authorName = req.user.name;
+        console.log(newComment);
+        post.comments.push(newComment); //Adds the comment to the array of comments in the parent (post) class. 
         post.save(function (err) { //Calls the save method in the post-object (from mongoose), which talks to the mongo db
             if (err) return handleError(err, res, 500); //Returns an error with the error code 500 (internal server error)
             return res.json(200, post); //If the object is saved succesfully, the new post object (including the new comment) is return as JSON and the error code 200 (OK).

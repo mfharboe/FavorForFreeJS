@@ -38,9 +38,9 @@
         <img src="../assets/images/givehelp_icon.png">
       </div>
       <h4>Comment a Favor</h4>
-      <form role="form">
+      <form role="form" ng-submit="addComment()">
         <div class="form-group">
-          <textarea class="form-control" rows="2"></textarea>
+          <textarea class="form-control" rows="2" ng-model="comment"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

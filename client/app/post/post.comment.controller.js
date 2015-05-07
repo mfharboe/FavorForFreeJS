@@ -10,6 +10,18 @@ angular.module('favorForFreeApp')
       $scope.post = post;
       $scope.postComments = post.comments;
     });
+    
+    $scope.addComment = function () {
+        if (!$scope.comment || $scope.comment === '') {
+            return;
+        }
+            postService.createComment($stateParams.id, {
+                comment: $scope.comment    
+            }, function(whatever) {
+                console.log(whatever);
+            });
+                                      
+        };
 
     /*redirecting to profile with the authorId as stateparams for identification*/
     $scope.userDetails = function (authorId) {
@@ -20,7 +32,6 @@ angular.module('favorForFreeApp')
       });
 
     };
-
 
 
   });
