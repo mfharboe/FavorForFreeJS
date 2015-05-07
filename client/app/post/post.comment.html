@@ -23,7 +23,7 @@
         <li><span><i class="glyphicon glyphicon-calendar"></i> {{post.date}}</span>
         </li>
         <li>|</li>
-        <li><span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
+        <li><span><i class="glyphicon glyphicon-comment"></i>{{numberOfComments}} comments</span>
         </li>
         <li>|</li>
         <li><span><i class="glyphicon glyphicon-road"></i> {{post.zip}}</span>
@@ -38,9 +38,9 @@
         <img src="../assets/images/givehelp_icon.png">
       </div>
       <h4>Comment a Favor</h4>
-      <form role="form">
+      <form role="form" ng-submit="addcomment()">
         <div class="form-group">
-          <textarea class="form-control" rows="2"></textarea>
+          <textarea class="form-control" rows="2" ng-model="comment" )></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
@@ -48,9 +48,9 @@
         <a class="pull-left" href="#">
           <img class="media-object" src="../assets/images/givehelp_icon.png">
         </a>
-        <div class="media-body">
-          <h4 class="media-heading">By: Michael<small> 29-04-2015</small></h4>
-          <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. </p>
+        <div class="media-body" ng-repeat="postComment in postComments">
+          <h4 class="media-heading">By: {{postComment.authorName}}<small> {{postComment.date}}</small></h4>
+          <p>{{postComment.comment}} </p>
         </div>
         <hr>
       </div>
