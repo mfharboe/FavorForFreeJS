@@ -8,7 +8,7 @@
             </div>
            
             <h4>Give a Favor?</h4>
-            <form role="form" ng-submit="addPost(false)">
+            <form role="form" ng-submit="addPost(true)">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Title.." ng-model="title"></input>
                 </div>
@@ -24,25 +24,25 @@
 
         <br>
         <div class="row">
-            <div ng-repeat="post in posts">
+            <div ng-repeat="favor in favorsGiven">
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <div class="box_posts" ng-click="details(post._id)">
+                    <div class="box_posts" ng-click="details(favor._id)">
                         <div class="box-icon">
                             <img src="../assets/images/givehelp_icon.png">
                         </div>
                         <div>
-                            <h4 class="text-center">{{post.title}}</h4>
+                            <h4 class="text-center">{{favor.title}}</h4>
                             <ul class="list-inline">
-                                <li><span><i class="glyphicon glyphicon-user"></i> {{post.authorName}}</span>
+                                <li><span><i class="glyphicon glyphicon-user"></i> {{favor.authorName}}</span>
                                 </li>
                                 <li>|</li>
-                                <li><span><i class="glyphicon glyphicon-calendar"></i> {{post.date | date:'dd-MM-yyyy'}}</span>
+                                <li><span><i class="glyphicon glyphicon-calendar"></i> {{favor.date | date:'dd-MM-yyyy'}}</span>
                                 </li>
                                 <li>|</li>
                                 <li><span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
                                 </li>
                                 <li>|</li>
-                                <li><span><i class="glyphicon glyphicon-road"></i> {{post.zip}}</span>
+                                <li><span><i class="glyphicon glyphicon-road"></i> {{favor.zip}}</span>
                                 </li>
                             </ul>
                         </div>

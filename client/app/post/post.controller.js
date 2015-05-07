@@ -3,11 +3,23 @@
 angular.module('favorForFreeApp')
   .controller('PostCtrl', function ($scope, postService, $state) {
 
-    $scope.posts = [];
-
-    postService.list(function (posts) {
-      $scope.posts = posts;
+    $scope.favorsNeeded = [];
+    $scope.favorsGiven = [];
+    
+    postService.list(function (favors) {
+           sorting(favors);
     });
+    
+    var sorting = function(favors) {
+        favors.forEach(function (favor) {
+        if(favor.isHelper){
+                $scope.favorsGiven.push(favor);
+           }
+            else {
+                $scope.favorsNeeded.push(favor);
+            }
+        });
+    };
 
         $scope.details = function (_id) {
             $state.go('comment', {
@@ -30,8 +42,10 @@ angular.module('favorForFreeApp')
                 description: $scope.description,
                 zip: $scope.zip,
                 isHelper: isHelper
-            }, function (posts) {
-                $scope.posts = posts;
+            }, function (favors) {
+                $scope.favorsNeeded = [];
+                $scope.favorsGiven = [];
+                sorting(favors);
             });
             $scope.title = '';
             $scope.description = '';
