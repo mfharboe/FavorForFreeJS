@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 
 var PostSchema = new Schema({
     title: String,
-    authorId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}, //Reference to the user ID only.
+    authorId: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true}, //Reference to the user ID only.
     authorName: String, //Name of the user who posted it.
     date: {type: Date, default: Date.now}, //gets the current date.
     isHelper: Boolean, //Determines if the user is needing help or wants to help. Set true if the user wants to help, false if the user needs help
@@ -18,3 +18,4 @@ var PostSchema = new Schema({
 });
 
 module.exports = mongoose.model('Post', PostSchema);
+
