@@ -10,6 +10,10 @@ var validationError = function (res, err) {
   return res.json(422, err);
 };
 
+function handleError(res, err) {
+  return res.send(500, err);
+}
+
 // Updates an existing user in the DB.
 exports.update = function (req, res) {
   if (req.body._id) {
