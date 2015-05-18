@@ -14,7 +14,9 @@
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2260.5661014177485!2d8.446688999999996!3d55.48766000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464b20de0dc1b019%3A0xf131cc5b28fe1f27!2sErhvervsakademi+Sydvest!5e0!3m2!1sda!2sdk!4v1430320871138"></iframe>
         </div>
       </div>
-      <br>
+      
+        <br>
+        
       <ul class="list-inline">
         <!-- Onclick method to redirect to the correct profile, using the available author id instead of getting userId from user object -->
         <a ng-click="userDetails(post.authorId)"><span><i class="glyphicon glyphicon-user"></i>{{post.authorName}}</span>
@@ -37,22 +39,22 @@
       <div class="box-icon">
         <img src="../assets/images/givehelp_icon.png">
       </div>
-      <h4>Comment a Favor</h4>
+        <br>
       <form role="form" ng-submit="addcomment()">
         <div class="form-group">
-          <textarea class="form-control" rows="2" ng-model="comment" )></textarea>
+          <textarea class="form-control" rows="3" ng-model="comment" style="resize: none" placeholder="Comment a Favor"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
-      <div class="media">
-        <a class="pull-left" href="#">
+        <br>
+      <div class="media" ng-repeat="postComment in postComments">
+        <div class="pull-left" href="#">
           <img class="media-object" src="../assets/images/givehelp_icon.png">
-        </a>
-        <div class="media-body" ng-repeat="postComment in postComments">
+        </div>
+        <div class="media-body">
           <h4 class="media-heading">By: {{postComment.authorName}}<small> {{postComment.date}}</small></h4>
           <p>{{postComment.comment}} </p>
         </div>
-        <hr>
       </div>
     </div>
   </div>
