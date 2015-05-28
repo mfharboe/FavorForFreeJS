@@ -36,10 +36,7 @@ angular.module('favorForFreeApp')
         }
             postService.createComment($stateParams.id, {
                 comment: $scope.comment    
-            }, function(whatever) {
-                console.log(whatever);
-            });
-                                      
+            });                         
         };
 
     /*redirecting to profile with the authorId as stateparams for identification*/
